@@ -1,0 +1,95 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 60px;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-primary);
+    position: relative;
+    z-index: 10;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    padding: 0;
+    border-radius: var(--radius-sm);
+}
+.header-logo:hover {
+    opacity: 0.8;
+}
+
+.logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-primary);
+    transition: border-color var(--transition-fast);
+}
+
+.header-logo:hover .logo-icon {
+    border-color: var(--violet-500);
+}
+
+.header-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    line-height: 1;
+}
+
+.header-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+.header-subtitle {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 12px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: 999px;
+}
+
+.badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent-emerald);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.badge-text {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}

@@ -1,0 +1,213 @@
+.doclist-page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.doclist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.doc-card {
+    padding: 20px;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: fadeIn 0.3s ease-out forwards;
+    opacity: 0;
+    transition: all var(--transition-normal);
+}
+
+.doc-card:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-primary);
+}
+
+.doc-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.doc-icon {
+    font-size: 28px;
+}
+
+.doc-card-actions {
+    display: flex;
+    align-items: center;
+}
+
+.doc-delete-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    opacity: 0;
+    transition: all var(--transition-normal);
+}
+
+.doc-card:hover .doc-delete-btn {
+    opacity: 1;
+}
+
+.doc-delete-btn:hover {
+    background: rgba(244, 63, 94, 0.1);
+}
+
+.delete-confirm {
+    display: flex;
+    gap: 4px;
+}
+
+.confirm-yes,
+.confirm-no {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.confirm-yes {
+    background: rgba(244, 63, 94, 0.15);
+    color: var(--accent-rose);
+}
+
+.confirm-yes:hover {
+    background: rgba(244, 63, 94, 0.25);
+}
+
+.confirm-no {
+    background: rgba(148, 163, 184, 0.1);
+    color: var(--text-secondary);
+}
+
+.confirm-no:hover {
+    background: rgba(148, 163, 184, 0.2);
+}
+
+.doc-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.doc-meta {
+    display: flex;
+    gap: 16px;
+}
+
+.doc-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.meta-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    font-weight: 500;
+}
+
+.meta-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent-primary-light);
+    font-family: var(--font-mono);
+}
+
+.doc-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-secondary);
+}
+
+.doc-date {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.doc-id {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+/* Skeleton */
+.doclist-skeleton {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.doc-card-skeleton {
+    padding: 24px;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.skeleton-line {
+    height: 14px;
+    background: var(--bg-tertiary);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+}
+
+.skeleton-line.wide {
+    width: 100%;
+}
+
+.skeleton-line.medium {
+    width: 70%;
+}
+
+.skeleton-line.narrow {
+    width: 40%;
+}
+
+/* Empty State */
+.empty-state {
+    padding: 64px 32px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.empty-state h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    font-size: 14px;
+    color: var(--text-muted);
+}

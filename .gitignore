@@ -1,0 +1,35 @@
+# Env
+.env
+.env.local
+.env.*.local
+backend/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+backend/venv/
+venv/
+
+# Node
+node_modules/
+frontend/node_modules/
+.next/
+dist/
+frontend/dist/
+
+# ChromaDB persistent data (Render disk handles prod)
+backend/chroma_data/
+chroma_data/
+
+# Logs
+*.log
+backend.log
+frontend.log
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp

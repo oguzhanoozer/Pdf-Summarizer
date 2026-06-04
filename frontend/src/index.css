@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Lexicon — Talk to your PDFs
+ * Clean, light, functional. No gradients.
+ * Inspired by Linear / Stripe Docs — readable, calm, fast.
+ */
+:root {
+  /* Surfaces */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f7f8;
+  --bg-tertiary: #ececef;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f7f7f8;
+  --bg-glass: #ffffff;
+  --bg-input: #ffffff;
+
+  /* Borders */
+  --border-primary: #e4e4e7;
+  --border-secondary: #ececef;
+  --border-accent: #4f46e5;
+  --border-amber: #d97706;
+
+  /* Text */
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-muted: #71717a;
+  --text-accent: #4f46e5;
+
+  /* Brand — single solid indigo, no gradient */
+  --violet-300: #a5b4fc;
+  --violet-400: #818cf8;
+  --violet-500: #4f46e5;        /* primary */
+  --violet-600: #4338ca;
+  --violet-700: #3730a3;
+
+  /* Accent — solid amber */
+  --amber-300: #fcd34d;
+  --amber-400: #fbbf24;
+  --amber-500: #f59e0b;
+
+  /* Semantic */
+  --accent-primary: var(--violet-500);
+  --accent-primary-light: var(--violet-400);
+  --accent-emerald: #059669;
+  --accent-emerald-light: #10b981;
+  --accent-amber: var(--amber-500);
+  --accent-rose: #e11d48;
+  --accent-cyan: #0891b2;
+
+  /* Shadows — subtle, single layer */
+  --shadow-sm: 0 1px 2px rgba(24, 24, 27, 0.05);
+  --shadow-md: 0 2px 4px rgba(24, 24, 27, 0.06), 0 1px 2px rgba(24, 24, 27, 0.04);
+  --shadow-lg: 0 4px 8px rgba(24, 24, 27, 0.08), 0 2px 4px rgba(24, 24, 27, 0.04);
+  --shadow-glow: none;
+  --shadow-emerald-glow: none;
+  --shadow-amber-glow: none;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --transition-fast: 120ms ease;
+  --transition-normal: 180ms ease;
+  --transition-slow: 240ms ease;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-serif: 'Inter', sans-serif; /* No serif anywhere; keep name for compat */
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#root { min-height: 100vh; display: flex; flex-direction: column; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-primary); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInScale { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+@keyframes slideInLeft { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideInRight { from { opacity: 0; transform: translateX(8px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.animate-in { animation: fadeIn 0.25s ease-out forwards; }
+.animate-scale { animation: fadeInScale 0.2s ease-out forwards; }
+.animate-float { animation: none; }
+
+.glass {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background var(--transition-normal), border-color var(--transition-normal), color var(--transition-normal);
+}
+button:focus-visible { outline: 2px solid var(--violet-500); outline-offset: 2px; }
+
+input, textarea, select {
+  font-family: var(--font-sans);
+  outline: none;
+  border: 1px solid var(--border-primary);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--violet-500);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+::selection { background: rgba(79, 70, 229, 0.18); color: var(--text-primary); }
+
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+.font-display { font-family: var(--font-sans); letter-spacing: -0.02em; font-weight: 700; }

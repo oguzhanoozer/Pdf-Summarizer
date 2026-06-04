@@ -1,0 +1,393 @@
+/* Upload page — clean, confident, no gradients */
+.upload-page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 8px 0 48px;
+}
+
+.upload-header {
+    margin-bottom: 24px;
+}
+
+.upload-eyebrow {
+    color: var(--violet-500);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+}
+
+.page-title {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    line-height: 1.15;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.025em;
+    margin-bottom: 8px;
+}
+
+.page-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    max-width: 540px;
+}
+
+/* — Main card — */
+.upload-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+/* — Tabs (underline style) — */
+.upload-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border-primary);
+    padding: 0 8px;
+    background: var(--bg-secondary);
+}
+
+.upload-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    cursor: pointer;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+.upload-tab:hover {
+    color: var(--text-primary);
+}
+.upload-tab.active {
+    color: var(--text-primary);
+    border-bottom-color: var(--violet-500);
+    font-weight: 600;
+}
+
+/* — Form — */
+.upload-form {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+.field-optional {
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 36px 10px 38px;
+    font-size: 0.9375rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-primary);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+.input::placeholder {
+    color: var(--text-muted);
+}
+
+.input-clear {
+    position: absolute;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    border-radius: 6px;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+.input-clear:hover {
+    background: var(--border-primary);
+    color: var(--text-primary);
+}
+
+/* — Submit button — */
+.upload-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    margin-top: 8px;
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+}
+.upload-btn:hover:not(:disabled) {
+    background: var(--violet-700);
+}
+.upload-btn:active:not(:disabled) {
+    transform: scale(0.985);
+}
+.upload-btn:disabled {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    cursor: not-allowed;
+}
+
+.spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    display: inline-block;
+}
+
+/* — Drop zone — */
+.drop-zone {
+    border: 1.5px dashed var(--border-primary);
+    border-radius: var(--radius-md);
+    padding: 32px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+    background: var(--bg-secondary);
+}
+.drop-zone:hover,
+.drop-zone.active {
+    border-color: var(--violet-500);
+    background: rgba(79, 70, 229, 0.04);
+}
+.drop-zone.has-file {
+    padding: 16px;
+    background: var(--bg-primary);
+    border-style: solid;
+    border-color: var(--border-primary);
+    cursor: default;
+}
+
+.file-input-hidden {
+    display: none;
+}
+
+.drop-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.drop-icon {
+    color: var(--text-muted);
+    display: inline-flex;
+    padding: 10px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: 999px;
+    margin-bottom: 4px;
+}
+.drop-text {
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+}
+.drop-link {
+    color: var(--violet-500);
+    text-decoration: underline;
+    font-weight: 600;
+}
+.drop-hint {
+    color: var(--text-muted);
+    font-size: 0.8125rem;
+}
+
+.file-preview {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.file-preview-icon {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+    color: var(--violet-500);
+}
+.file-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    min-width: 0;
+}
+.file-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+.file-size {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+.file-remove {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    border-radius: 6px;
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+.file-remove:hover {
+    background: rgba(225, 29, 72, 0.1);
+    color: var(--accent-rose);
+}
+
+/* — Messages — */
+.message {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    margin-top: 16px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    border: 1px solid;
+}
+.message-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: inline-flex;
+}
+.message strong {
+    display: block;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+.message-error {
+    background: rgba(225, 29, 72, 0.04);
+    color: var(--accent-rose);
+    border-color: rgba(225, 29, 72, 0.2);
+}
+.message-error strong { color: var(--accent-rose); }
+
+.message-success {
+    background: rgba(5, 150, 105, 0.04);
+    color: var(--accent-emerald);
+    border-color: rgba(5, 150, 105, 0.2);
+}
+.message-success strong { color: var(--accent-emerald); }
+
+.success-details {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+}
+.success-details .dot {
+    width: 3px;
+    height: 3px;
+    background: var(--text-muted);
+    border-radius: 50%;
+}
+
+/* — Feature row — */
+.upload-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    transition: border-color var(--transition-fast);
+}
+.feature-card:hover {
+    border-color: var(--violet-500);
+}
+
+.feature-icon {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    color: var(--violet-500);
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+}
+
+.feature-card h3 {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+.feature-card p {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+    .upload-page { padding: 0 0 48px; }
+    .upload-form { padding: 16px; }
+}
