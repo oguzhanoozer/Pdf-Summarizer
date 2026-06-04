@@ -1,5 +1,11 @@
 # Lexicon — Talk to your PDFs
-# FastAPI backend (Docker + Disk for ChromaDB) + Vite static frontend.
+# FastAPI backend (Docker) + Vite static frontend.
+#
+# NOTE on free tier:
+#  - Render free tier doesn't allow persistent disks → ChromaDB lives in
+#    memory and resets on every restart (~15 min idle = sleep). Fine for a
+#    portfolio demo; upgrade to "starter" plan and re-add the `disk:` block
+#    if you want persistence across restarts.
 
 services:
   - type: web
@@ -12,21 +18,16 @@ services:
     envVars:
       - key: OPENAI_API_KEY
         sync: false
-    disk:
-      name: chroma-data
-      mountPath: /app/chroma_data
-      sizeGB: 1
 
   - type: web
     name: lexicon-web
     runtime: static
-    region: frankfurt
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     routes:
       # Proxy /api/* to backend. After first deploy of lexicon-api,
-      # replace the destination with the actual Render URL.
+      # replace the destination with the actual Render URL if it differs.
       - type: rewrite
         source: /api/*
         destination: https://lexicon-api.onrender.com/api/*
